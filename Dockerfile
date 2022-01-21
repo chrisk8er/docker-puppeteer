@@ -3,7 +3,7 @@
 # Initially based upon:
 # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
 
-FROM node:14.16.0-buster-slim@sha256:ffc15488e56d99dbc9b90d496aaf47901c6a940c077bc542f675ae351e769a12
+FROM node:14.18.3-buster-slim@sha256:1cc39235887ee55b04c9d1348a366e81b4613b0ce4cb5147e55b36888abc9819
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
