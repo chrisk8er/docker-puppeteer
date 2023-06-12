@@ -1,4 +1,4 @@
-FROM node:14-slim
+FROM node:16-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
@@ -22,6 +22,8 @@ RUN apt-get update \
 # you'll need to launch puppeteer with:
 #     browser.launch({executablePath: 'google-chrome-stable'})
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+
+WORKDIR /usr/app
 
 # Install puppeteer so it's available in the container.
 RUN npm init -y &&  \
