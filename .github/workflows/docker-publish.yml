@@ -18,7 +18,8 @@ jobs:
       with:
         # username: ${{ secrets.DOCKERHUB_USERNAME }}
         username: chrisk8er
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        # password: ${{ secrets.DOCKERHUB_TOKEN }}
+        password: dckr_pat_uCDj3jSgbVXTfw1h3UzGTnRg-1g
 
     - name: Build and Push Docker image
       uses: docker/build-push-action@v4
