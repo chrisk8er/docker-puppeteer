@@ -23,7 +23,7 @@ RUN apt-get update \
 #     browser.launch({executablePath: 'google-chrome-stable'})
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-WORKDIR /usr/app
+WORKDIR /home/pptruser
 
 # Install puppeteer so it's available in the container.
 RUN npm init -y &&  \
@@ -33,9 +33,9 @@ RUN npm init -y &&  \
     && groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && mkdir -p /home/pptruser/Downloads \
     && chown -R pptruser:pptruser /home/pptruser \
-    && chown -R pptruser:pptruser /node_modules \
-    && chown -R pptruser:pptruser /package.json \
-    && chown -R pptruser:pptruser /package-lock.json
+    && chown -R pptruser:pptruser /home/pptruser/node_modules \
+    && chown -R pptruser:pptruser /home/pptruser/package.json \
+    && chown -R pptruser:pptruser /home/pptruser/package-lock.json
 
 # Run everything after as non-privileged user.
 USER pptruser
